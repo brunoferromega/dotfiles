@@ -1,13 +1,32 @@
 return {
-  {
-    "williamboman/mason.nvim",
+  "neovim/nvim-lspconfig",
+  dependencies = {
+    -- LSP Configuration
+    -- https://github.com/neovim/nvim-lspconfig
+    "neovim/nvim-lspconfig",
+    event = "VeryLazy",
+    dependencies = {
+      -- LSP Management
+      -- https://github.com/williamboman/mason.nvim
+      { "williamboman/mason.nvim" },
+      -- https://github.com/williamboman/mason-lspconfig.nvim
+      { "williamboman/mason-lspconfig.nvim" },
+
+      -- Auto-Install LSPs, linters, formatters, debuggers
+      -- https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim
+      { "WhoIsSethDaniel/mason-tool-installer.nvim" },
+
+      -- Useful status updates for LSP
+      -- https://github.com/j-hui/fidget.nvim
+      { "j-hui/fidget.nvim",                        opts = {} },
+
+      -- Additional lua configuration, makes nvim stuff amazing!
+      -- https://github.com/folke/neodev.nvim
+      { "folke/neodev.nvim",                        opts = {} },
+    },
     config = function()
       require("mason").setup()
-    end,
-  },
-  {
-    "williamboman/mason-lspconfig.nvim",
-    config = function()
+
       require("mason-lspconfig").setup({
         ensure_installed = {
           "lua_ls",
@@ -34,15 +53,11 @@ return {
         },
         automatic_installation = true,
       })
-    end,
-  },
-  {
-    "neovim/nvim-lspconfig",
-    config = function()
+
       require("cmp").setup({
         completion = {
-          autocomplete = false
-        }
+          autocomplete = false,
+        },
       })
 
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -53,6 +68,14 @@ return {
       local lspconfig = require("lspconfig")
 
       lspconfig.lua_ls.setup({
+        settings = {
+          Lua = {
+            diagnostics = {
+              -- Get the language server to recognize the `vim` global
+              globals = { "vim" },
+            },
+          },
+        },
         capabilities = capabilities,
       })
       lspconfig.elp.setup({
@@ -117,6 +140,14 @@ return {
       lspconfig.kotlin_language_server.setup({
         capabilities = capabilities,
       })
+
+      -- Globally configure all LSP floating preview popups (like hover, signature help, etc)
+      local open_floating_preview = vim.lsp.util.open_floating_preview
+      function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+        opts = opts or {}
+        opts.border = opts.border or "rounded" -- Set border to rounded
+        return open_floating_preview(contents, syntax, opts, ...)
+      end
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
