@@ -13,7 +13,7 @@ $character"""
 palette = 'salmon_indigo'
 
 [character] # The name of the module we are configuring is 'character'
-success_symbol = '[>>=](blue)' 
+success_symbol = '[Ω](blue)' 
 
 [palettes.salmon_indigo]
 color_fg0 = '#fbf1c7'
