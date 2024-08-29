@@ -35,7 +35,6 @@ return {
           "tsserver",
           "pylsp",
           "jsonls",
-          "rust_analyzer",
           "bashls",
           "cssls",
           "tailwindcss",
@@ -132,9 +131,6 @@ return {
         capabilities = capabilities,
       })
       lspconfig.clojure_lsp.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.rust_analyzer.setup({
         capabilities = capabilities,
       })
       lspconfig.kotlin_language_server.setup({
