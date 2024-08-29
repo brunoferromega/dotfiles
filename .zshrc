@@ -132,3 +132,6 @@ fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit ; compinit
 
 eval "$(starship init zsh)"
+
+export WINEARCH=win32
+export WINEPREFIX=~/.wine32
