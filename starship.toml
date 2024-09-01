@@ -6,6 +6,7 @@ $fill\
 $rust\
 $lua\
 $nodejs\
+$python\
 $jobs\
 $line_break\
 $character"""
@@ -52,14 +53,19 @@ Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
 
-[rust]
-symbol = ""
-format = '[ $symbol( $version) ](fg:color_salmon)'
 
 [python]
 symbol = ""
-style = "bg:color_blue"
-format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
+format = '[[ ($virtualenv) $symbol( $version) ](fg:color_fg0)]($style)'
+pyenv_version_name = true
+pyenv_prefix = "pyenv"
+python_binary = ['python', 'python3', 'python2']
+detect_extensions = ['py']
+detect_files = ['.python-version', 'Pipfile', '__init__.py', 'pyproject.toml', 'requirements.txt', 'setup.py', 'tox.ini', '.py']
+
+[rust]
+symbol = ""
+format = '[ $symbol( $version) ](fg:color_salmon)'
 
 [nodejs]
 symbol = ""

@@ -78,13 +78,13 @@ return {
         },
         capabilities = capabilities,
       })
+      lspconfig.pylsp.setup({
+        capabilities = capabilities,
+      })
       lspconfig.elp.setup({
         capabilities = capabilities,
       })
       lspconfig.tsserver.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.pylsp.setup({
         capabilities = capabilities,
       })
       lspconfig.jdtls.setup({
@@ -145,6 +145,9 @@ return {
         opts.border = opts.border or "rounded" -- Set border to rounded
         return open_floating_preview(contents, syntax, opts, ...)
       end
+      
+      -- Default hint for Neovim
+      vim.lsp.inlay_hint.enable(false)
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
