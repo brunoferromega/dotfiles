@@ -31,9 +31,10 @@ return {
         ensure_installed = {
           "lua_ls",
           "rust_analyzer",
+          "taplo",
           "elp",
           "jdtls",
-          "tsserver",
+          "ts_ls",
           "pylsp",
           "jsonls",
           "bashls",
@@ -84,7 +85,7 @@ return {
       lspconfig.elp.setup({
         capabilities = capabilities,
       })
-      lspconfig.tsserver.setup({
+      lspconfig.ts_ls.setup({
         capabilities = capabilities,
       })
       lspconfig.jdtls.setup({
@@ -135,6 +136,9 @@ return {
         capabilities = capabilities,
       })
       lspconfig.kotlin_language_server.setup({
+        capabilities = capabilities,
+      })
+      lspconfig.taplo.setup({
         capabilities = capabilities,
       })
 
