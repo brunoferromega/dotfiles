@@ -31,6 +31,7 @@ return {
         ensure_installed = {
           "lua_ls",
           "rust_analyzer",
+          "gopls",
           "taplo",
           "elp",
           "jdtls",
@@ -77,6 +78,9 @@ return {
             },
           },
         },
+        capabilities = capabilities,
+      })
+      lspconfig.gopls.setup({
         capabilities = capabilities,
       })
       lspconfig.pylsp.setup({

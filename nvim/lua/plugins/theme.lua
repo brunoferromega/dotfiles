@@ -38,7 +38,7 @@ return {
         ["@function"] = { fg = blue_eletric, italic = false },
         ["@function.method"] = { fg = blue_eletric, italic = false },
         ["@function.builtin"] = { fg = blue_eletric, italic = true, bold = false },
-        ["@function.method.call"] = { fg = blue_eletric, italic = true },
+        ["@function.method.call"] = { fg = blue_eletric, italic = false },
         ["@variable"] = { italic = false },
         ["@variable.parameter"] = { fg = "text" },
         ["@variable.member"] = { fg = "gold" },
@@ -55,7 +55,7 @@ return {
         ["@constant.macro"] = { fg = blue_eletric, italic = false },
         ["@type"] = { fg = salmon },
         ["@type.builtin"] = { fg = salmon, bold = true },
-        ["@property"] = { fg = "text", italic = true },
+        ["@property"] = { fg = "text", italic = false },
         ["@attribute"] = { fg = "text", italic = false, bold = true },
       },
     })

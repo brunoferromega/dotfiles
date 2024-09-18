@@ -5,6 +5,7 @@ $git_status\
 $fill\
 $rust\
 $lua\
+$golang\
 $nodejs\
 $python\
 $jobs\
@@ -66,6 +67,10 @@ detect_files = ['.python-version', 'Pipfile', '__init__.py', 'pyproject.toml', '
 [rust]
 symbol = ""
 format = '[ $symbol( $version) ](fg:color_salmon)'
+
+[golang]
+symbol = ""
+format = '[ $symbol ($version) ](fg:#769ff0)'
 
 [nodejs]
 symbol = ""
