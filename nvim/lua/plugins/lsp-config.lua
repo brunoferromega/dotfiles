@@ -56,11 +56,7 @@ return {
         automatic_installation = true,
       })
 
-      require("cmp").setup({
-        completion = {
-          autocomplete = false,
-        },
-      })
+      require("cmp").setup({})
 
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
@@ -153,7 +149,7 @@ return {
         opts.border = opts.border or "rounded" -- Set border to rounded
         return open_floating_preview(contents, syntax, opts, ...)
       end
-      
+
       -- Default hint for Neovim
       vim.lsp.inlay_hint.enable(false)
 
