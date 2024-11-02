@@ -9,6 +9,7 @@ return {
     local salmon = "#F5816C"
     local indigo = "#7D83FF"
     local green_yellow = "#AFFC41"
+    local green_blue = "#76B9AC"
 
     require("rose-pine").setup({
       extend_background_behind_borders = true,
@@ -33,15 +34,15 @@ return {
         Keyword = { fg = indigo, italic = true },
         Include = { italic = true },
         String = { fg = string_yellow },
-        Number = { fg = "love" },
-        Float = { fg = "love" },
+        Number = { fg = green_blue },
+        Float = { fg = green_blue },
         ["@function"] = { fg = blue_eletric, italic = false },
         ["@function.method"] = { fg = blue_eletric, italic = false },
         ["@function.builtin"] = { fg = blue_eletric, italic = true, bold = false },
         ["@function.method.call"] = { fg = blue_eletric, italic = false },
         ["@variable"] = { italic = false },
-        ["@variable.parameter"] = { fg = "text" },
-        ["@variable.member"] = { fg = "gold" },
+        ["@variable.parameter"] = { fg = "text", italic = false },
+        ["@variable.member"] = { fg = "text" },
         ["@module"] = { fg = "rose" },
         ["@operator"] = { fg = green_yellow },
         ["@keyword.operator"] = { fg = green_yellow },
