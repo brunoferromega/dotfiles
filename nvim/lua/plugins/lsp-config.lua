@@ -56,7 +56,9 @@ return {
         automatic_installation = true,
       })
 
-      require("cmp").setup({})
+      require("cmp").setup({
+        completion = { autocomplete = false },
+      })
 
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
@@ -76,6 +78,14 @@ return {
         },
         capabilities = capabilities,
       })
+
+      lspconfig.rust_analyzer.setup({
+        -- on_attach = function(client, bufnr)
+        --   client.server_capabilities.completionProvider = nil
+        -- end,
+        capabilities = capabilities,
+      })
+
       lspconfig.gopls.setup({
         capabilities = capabilities,
       })

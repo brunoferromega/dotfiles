@@ -137,3 +137,7 @@ export WINEARCH=win32
 export WINEPREFIX=~/.wine32
 
 export PATH="$PATH:/usr/local/go/bin"
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
