@@ -31,6 +31,8 @@ return {
         ensure_installed = {
           "lua_ls",
           "rust_analyzer",
+          "clangd",
+          "csharp_ls",
           "gopls",
           "taplo",
           "elp",
@@ -86,27 +88,41 @@ return {
         capabilities = capabilities,
       })
 
+      lspconfig.clangd.setup({
+        capabilities = capabilities,
+      })
+
+      lspconfig.csharp_ls.setup({
+        capabilities = capabilities,
+      })
       lspconfig.gopls.setup({
         capabilities = capabilities,
       })
+
       lspconfig.pylsp.setup({
         capabilities = capabilities,
       })
+
       lspconfig.elp.setup({
         capabilities = capabilities,
       })
+
       lspconfig.ts_ls.setup({
         capabilities = capabilities,
       })
+
       lspconfig.jdtls.setup({
         capabilities = capabilities,
       })
+
       lspconfig.dockerls.setup({
         capabilities = capabilities,
       })
+
       lspconfig.docker_compose_language_service.setup({
         capabilities = capabilities,
       })
+
       lspconfig.html.setup({
 
         capabilities = html_capabilities,
@@ -127,27 +143,35 @@ return {
           provideFormatter = true,
         },
       })
+
       lspconfig.vimls.setup({
         capabilities = capabilities,
       })
+
       lspconfig.tailwindcss.setup({
         capabilities = capabilities,
       })
+
       lspconfig.ruby_lsp.setup({
         capabilities = capabilities,
       })
+
       lspconfig.rubocop.setup({
         capabilities = capabilities,
       })
+
       lspconfig.ocamllsp.setup({
         capabilities = capabilities,
       })
+
       lspconfig.clojure_lsp.setup({
         capabilities = capabilities,
       })
+
       lspconfig.kotlin_language_server.setup({
         capabilities = capabilities,
       })
+
       lspconfig.taplo.setup({
         capabilities = capabilities,
       })
