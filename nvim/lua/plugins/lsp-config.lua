@@ -82,9 +82,6 @@ return {
       })
 
       lspconfig.rust_analyzer.setup({
-        -- on_attach = function(client, bufnr)
-        --   client.server_capabilities.completionProvider = nil
-        -- end,
         capabilities = capabilities,
       })
 
@@ -175,22 +172,6 @@ return {
       lspconfig.taplo.setup({
         capabilities = capabilities,
       })
-
-      -- Globally configure all LSP floating preview popups (like hover, signature help, etc)
-      local open_floating_preview = vim.lsp.util.open_floating_preview
-      function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
-        opts = opts or {}
-        opts.border = opts.border or "rounded" -- Set border to rounded
-        return open_floating_preview(contents, syntax, opts, ...)
-      end
-
-      -- Default hint for Neovim
-      vim.lsp.inlay_hint.enable(false)
-
-      vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-      vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
-      vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, {})
-      vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, {})
     end,
   },
 }
