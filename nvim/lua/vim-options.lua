@@ -21,7 +21,7 @@ vim.lsp.inlay_hint.enable(false)
 -- Globally configure all LSP floating preview popups (like hover, signature help, etc)
 local original_floating_preview = vim.lsp.util.open_floating_preview
 
-vim.lsp.utils.open_floating_preview = function(contents, syntax, opts)
+vim.lsp.util.open_floating_preview = function(contents, syntax, opts)
   opts = vim.tbl_extend("force", {border = "rounded"})
   return original_floating_preview(contents, syntax, opts)
 end
