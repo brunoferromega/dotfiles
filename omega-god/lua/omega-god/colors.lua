@@ -1,4 +1,5 @@
 local colors = {
+  -- Older Theme
   blue_eletric = "#45dcf3",
   string_yellow = "#F2E2BA",
   salmon = "#F5816C",
@@ -6,6 +7,15 @@ local colors = {
   green_yellow = "#AFFC41",
   green_blue = "#76B9AC",
 
+  -- Neo Theme
+  red_blush = "#DA627D",
+  yellow_champagne = "#EFD9CE",
+  orange_atomic_tangerine = "#FCA17D",
+  white_linen = "#FDF5EC",
+  purple_wisteria = "#B79CED",
+  purple_mauve = "#DEC0F1",
+
+  -- Base Theme
   bg1 = "#264027", -- "#12121f",
   bg2 = "#232338",
   bg3 = "#262640",

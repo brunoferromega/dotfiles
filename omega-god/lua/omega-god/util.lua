@@ -18,15 +18,15 @@ function util.load_theme()
 
 	local editor = omega_god.load_editor()
 	local syntax = omega_god.load_syntax()
-	local lsp = omega_god.load_lsp()
 	local treesitter = omega_god.load_treesitter()
+	local lsp = omega_god.load_lsp()
 	local coc = omega_god.load_coc()
 	local notify = omega_god.load_notify()
 
 	util.load_hl_group(editor)
 	util.load_hl_group(syntax)
-	util.load_hl_group(lsp)
 	util.load_hl_group(treesitter)
+	util.load_hl_group(lsp)
 	util.load_hl_group(coc)
 	util.load_hl_group(notify)
 end
