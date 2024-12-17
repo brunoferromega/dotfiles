@@ -146,7 +146,7 @@ theme.load_treesitter = function()
     ["@string.special.symbol"] = { fg = colors.blue2 },                               -- Symbols or atoms
     ["@string.special.path"] = { fg = colors.blue2 },                                 -- File paths
     ["@string.special.url"] = { fg = colors.orange2 },                                -- URLs/hyperlinks
-    ["@character"] = { fg = colors.green1 },                                          -- Character litterals
+    ["@character"] = { link = "@string" },                                          -- Character litterals
     ["@character.special"] = { fg = colors.blue2 },                                   -- Special characters
     ["@boolean"] = { fg = colors.orange1 },                                           -- Boolean literals
     ["@number"] = { fg = colors.green1 },                                             -- Number literals
