@@ -32,6 +32,10 @@ return {
 
 		capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+    local disable_diagnostics = function(_, _)
+      vim.lsp.handlers["textDocument/publishDiagnostics"] = function() end
+    end
+
 		local lspconfig = require("lspconfig")
 
 		lspconfig.lua_ls.setup({
@@ -47,14 +51,10 @@ return {
 		})
 
 		lspconfig.rust_analyzer.setup({
-			settings = {
-				["rust-analyzer"] = {
-					diagnostics = {
-						enable = false,
-					},
-				},
-			},
-			capabilities = capabilities,
+      on_attach = function(client, bufrn)
+        disable_diagnostics(client, bufrn)
+      end,
+      capabibilites = capabilities,
 		})
 
 		lspconfig.clangd.setup({
