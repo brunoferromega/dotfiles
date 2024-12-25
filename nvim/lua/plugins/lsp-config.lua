@@ -17,9 +17,10 @@ return {
         "rust_analyzer",
         "clangd",
         "gopls",
-        "jdtls",
         "ts_ls",
         "pylsp",
+        "jdtls",
+        "lemminx",
       },
       automatic_installation = false,
     })
@@ -79,15 +80,26 @@ return {
       capabilities = capabilities,
     })
 
-    lspconfig.jdtls.setup({
-      capabilities = capabilities,
-    })
 
     lspconfig.pylsp.setup({
       capabilities = capabilities,
     })
 
     lspconfig.ts_ls.setup({
+      capabilities = capabilities,
+    })
+
+    lspconfig.jdtls.setup({
+      on_attach = function(client, _)
+        client.server_capabilities.semanticTokensProvider = nil -- remove semantic highlighting
+      end,
+      capabilities = capabilities,
+      formatOptions = {
+        tabSize = 4,
+      },
+    })
+
+    lspconfig.lemminx.setup({
       capabilities = capabilities,
     })
   end,
