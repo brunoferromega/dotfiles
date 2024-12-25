@@ -13,9 +13,9 @@ return {
     require("mason-lspconfig").setup({
       ensure_installed = {
         "lua_ls",
+        "vimls",
         "rust_analyzer",
         "clangd",
-        "csharp_ls",
         "gopls",
         "jdtls",
         "ts_ls",
@@ -30,10 +30,13 @@ return {
 
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-    capabilities.textDocument.completion.completionItem.snippetSupport = false
-
     local disable_diagnostics = function(_, _)
       vim.lsp.handlers["textDocument/publishDiagnostics"] = function() end
+    end
+
+    local disable_snippets = function(client_capabilities)
+      client_capabilities.textDocument.completion.completionItem.snippetSupport = false
+      return client_capabilities
     end
 
     local lspconfig = require("lspconfig")
@@ -50,12 +53,16 @@ return {
       capabilities = capabilities,
     })
 
+    lspconfig.vimls.setup({
+      capabilities = capabilities,
+    })
+
     lspconfig.rust_analyzer.setup({
       on_attach = function(client, bufrn)
         client.server_capabilities.completionProvider = false
         disable_diagnostics(client, bufrn)
       end,
-      capabibilites = capabilities,
+      capabibilites = disable_snippets(capabilities),
     })
 
     lspconfig.gopls.setup({
@@ -72,13 +79,6 @@ return {
       capabilities = capabilities,
     })
 
-    lspconfig.csharp_ls.setup({
-      on_attach = function(client, bufrn)
-        disable_diagnostics(client, bufrn)
-      end,
-      capabilities = capabilities,
-    })
-
     lspconfig.jdtls.setup({
       capabilities = capabilities,
     })
@@ -88,10 +88,6 @@ return {
     })
 
     lspconfig.ts_ls.setup({
-      capabilities = capabilities,
-    })
-
-    lspconfig.vimls.setup({
       capabilities = capabilities,
     })
   end,
