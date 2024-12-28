@@ -136,7 +136,7 @@ eval "$(starship init zsh)"
 export WINEARCH=win32
 export WINEPREFIX=~/.wine32
 
-export PATH="$PATH:/usr/local/.go/bin"
+export PATH="$PATH:/usr/local/go/bin"
 
 
 # Load Angular CLI autocompletion.

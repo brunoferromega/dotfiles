@@ -25,10 +25,6 @@ return {
       automatic_installation = false,
     })
 
-    require("cmp").setup({
-      completion = { autocomplete = false },
-    })
-
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
     local disable_diagnostics = function(_, _)
@@ -92,14 +88,14 @@ return {
     })
 
     lspconfig.jdtls.setup({
+      formatOptions = {
+        tabSize = 4,
+      },
       on_attach = function(client, _)
         -- remove semantic highlighting
         client.server_capabilities.semanticTokensProvider = nil
       end,
       capabilities = capabilities,
-      formatOptions = {
-        tabSize = 4,
-      },
     })
 
     lspconfig.lemminx.setup({
