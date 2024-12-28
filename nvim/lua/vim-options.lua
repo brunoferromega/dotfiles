@@ -22,3 +22,4 @@ vim.lsp.util.open_floating_preview = function(contents, syntax, opts)
 	opts = vim.tbl_extend("force", opts or {}, { border = "rounded" })
 	return original_floating_preview(contents, syntax, opts)
 end
+

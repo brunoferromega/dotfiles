@@ -60,6 +60,7 @@ return {
 
     lspconfig.rust_analyzer.setup({
       on_attach = function(client, bufrn)
+        -- remove completions
         client.server_capabilities.completionProvider = false
         disable_diagnostics(client, bufrn)
       end,
@@ -68,6 +69,7 @@ return {
 
     lspconfig.gopls.setup({
       on_attach = function(client, bufrn)
+        client.server_capabilities.completionProvider = false
         disable_diagnostics(client, bufrn)
       end,
       capabilities = capabilities,
@@ -91,7 +93,8 @@ return {
 
     lspconfig.jdtls.setup({
       on_attach = function(client, _)
-        client.server_capabilities.semanticTokensProvider = nil -- remove semantic highlighting
+        -- remove semantic highlighting
+        client.server_capabilities.semanticTokensProvider = nil
       end,
       capabilities = capabilities,
       formatOptions = {
