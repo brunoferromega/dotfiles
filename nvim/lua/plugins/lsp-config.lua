@@ -65,7 +65,6 @@ return {
 
     lspconfig.gopls.setup({
       on_attach = function(client, bufrn)
-        client.server_capabilities.completionProvider = false
         disable_diagnostics(client, bufrn)
       end,
       capabilities = capabilities,

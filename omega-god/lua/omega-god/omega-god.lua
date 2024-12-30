@@ -156,7 +156,7 @@ theme.load_treesitter = function()
     ["@type.definition"] = { fg = colors.purple_wisteria },                              -- Identifiers of type definitions
     ["@attribute"] = { fg = colors.orange2 },                                            -- Attribute annotations
     ["@attribute.builtin"] = { fg = colors.purple1 },                                    -- Built-in annotations
-    ["@property"] = { fg = colors.blue_eletric },                                        -- The 'key' in 'key/value' pairs
+    ["@property"] = { fg = colors.white_linen },                                         -- The 'key' in 'key/value' pairs
     ["@function"] = { fg = colors.orange_atomic_tangerine },                             -- Function definitions
     ["@function.builtin"] = { fg = colors.orange_atomic_tangerine, italic = true },      -- Built-in function definitions
     --["@function.call"] = { fg = colors.orange_atomic_tangerine },                        -- Function calls
@@ -231,9 +231,13 @@ theme.load_lsp = function()
     LspCodeLensSeparator = { link = "Comment" },                -- Used to color the seperator between two or more code lens.
     LspSignatureActiveParameter = { bg = "None", fg = "None" }, -- Used to highlight the active parameter in the signature help. See |vim.lsp.handlers.signature_help()|.
 
-    --- Semantic
+    --- Language Semantics
     ["@lsp.type.type.java"] = { link = "Keyword" },
     ["@lsp.type.modifier.java"] = { link = "Keyword" },
+    ["@lsp.typemod.interface.defaultLibrary.rust"] = { fg = colors.purple_wisteria },
+    ["@lsp.typemod.typeAlias.library.rust"] = { fg = colors.purple_wisteria },
+    ["@lsp.typemod.struct.defaultLibrary.rust"] = { fg = colors.green_blue },
+    --- Default Semantics
     ["@lsp.type.comment"] = {},
     ["@lsp.type.comment.c"] = { link = "@comment" },
     ["@lsp.type.comment.cpp"] = { link = "@comment" },
