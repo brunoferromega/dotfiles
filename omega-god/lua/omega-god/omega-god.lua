@@ -156,7 +156,7 @@ theme.load_treesitter = function()
     ["@type.definition"] = { fg = colors.purple_wisteria },                              -- Identifiers of type definitions
     ["@attribute"] = { fg = colors.orange2 },                                            -- Attribute annotations
     ["@attribute.builtin"] = { fg = colors.purple1 },                                    -- Built-in annotations
-    ["@property"] = { fg = colors.white_linen },                                         -- The 'key' in 'key/value' pairs
+    ["@property"] = { fg = colors.blue_eletric },                                        -- The 'key' in 'key/value' pairs
     ["@function"] = { fg = colors.orange_atomic_tangerine },                             -- Function definitions
     ["@function.builtin"] = { fg = colors.orange_atomic_tangerine, italic = true },      -- Built-in function definitions
     --["@function.call"] = { fg = colors.orange_atomic_tangerine },                        -- Function calls
