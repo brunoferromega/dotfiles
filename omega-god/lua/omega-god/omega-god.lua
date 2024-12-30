@@ -127,6 +127,10 @@ end
 -- Treesitter highligh groups (:h treesitter-highlight)
 theme.load_treesitter = function()
   return {
+    -- For specific languages
+    ["@property.go"] = { fg = colors.blue2 },
+    ["@constant.go"] = { fg = colors.blue2 },
+    -- Defaults
     ["@variable"] = { fg = colors.white_linen },                                         -- Various variable names
     ["@variable.builtin"] = { fg = colors.red2 },                                        -- Built-in variable names
     ["@variable.parameter"] = { fg = colors.white_linen },                               -- Parameters of a function
