@@ -22,6 +22,8 @@ local colors = {
   purple_wisteria = "#B79CED",
   purple_mauve = "#DEC0F1",
 
+  blue_ylnmn = "#4A5590",
+
   -- Older Theme
   blue_eletric = "#45dcf3",
   string_yellow = "#F2E2BA",

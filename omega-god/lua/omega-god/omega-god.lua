@@ -88,10 +88,10 @@ theme.load_syntax = function()
     Number = { fg = colors.green1 },                      --   A number constant: 234, 0xff
     Float = { link = "Number" },                          --   A floating point constant: 2.3e10
 
-    Identifier = { fg = colors.white_platinum },          -- (*) Any variable name
+    Identifier = { fg = colors.white },                   -- (*) Any variable name
     Function = { fg = colors.orange_atomic_tangerine },   --   Function name (also: methods for classes)
 
-    Statement = { fg = colors.white_platinum },           -- (*) Any statement
+    Statement = { fg = colors.white },                    -- (*) Any statement
     Conditional = { fg = colors.bittersweet },            --   if, then, else, endif, switch, etc.
     Repeat = { link = "Conditional" },                    --   for, do, while, etc.
     Label = { link = "Conditional" },                     --   case, default, etc.
@@ -138,7 +138,7 @@ theme.load_treesitter = function()
     ["@variable.member"] = { fg = colors.white },                              -- Object and struct fields
     ["@constant"] = { fg = colors.white, bold = true },                        -- Constant identifiers
     ["@constant.builtin"] = { fg = colors.blue_eletric },                      -- Built-in constant values
-    ["@constant.macro"] = { fg = colors.brown_lion },             -- Constants defined by the preprocessor
+    ["@constant.macro"] = { fg = colors.brown_lion },                          -- Constants defined by the preprocessor
     ["@module"] = { fg = colors.yellow_champagne },                            -- Modules or namespace
     ["@module.builtin"] = { link = "@module" },                                -- Built-in modules or namespace
     ["@label"] = { fg = colors.lilac1 },                                       -- Label
@@ -156,15 +156,15 @@ theme.load_treesitter = function()
     ["@number"] = { fg = colors.green1 },                                      -- Number literals
     ["@number.float"] = { fg = colors.green1 },                                -- Float literals
     ["@type"] = { fg = colors.orange_light },                                  -- Type or class definitions
-    ["@type.builtin"] = { fg = colors.green_blue },                            -- Built-in types
+    ["@type.builtin"] = { fg = colors.blue_ylnmn, bold = true },               -- Built-in types
     ["@type.definition"] = { fg = colors.orange_light },                       -- Identifiers of type definitions
     ["@attribute"] = { fg = colors.orange2 },                                  -- Attribute annotations
     ["@attribute.builtin"] = { fg = colors.purple1 },                          -- Built-in annotations
-    ["@property"] = { fg = colors.white_platinum },                            -- The 'key' in 'key/value' pairs
+    ["@property"] = { fg = colors.white },                                     -- The 'key' in 'key/value' pairs
     ["@function"] = { fg = colors.pink_cherry },                               -- Function definitions
     ["@function.builtin"] = { fg = colors.pink_cherry, italic = true },        -- Built-in function definitions
     --["@function.call"] = { fg = colors.orange_atomic_tangerine },                        -- Function calls
-    ["@function.macro"] = { fg = colors.brown_lion },                              -- Preprocessor macros
+    ["@function.macro"] = { fg = colors.brown_lion },                          -- Preprocessor macros
     ["@function.method"] = { fg = colors.pink_cherry },                        -- Method definitions
     ["@function.method.call"] = { fg = colors.pink_cherry, italic = false },   -- Method calls
     ["@constructor"] = { fg = colors.orange_atomic_tangerine, italic = true }, -- Constructor calls and definitions
@@ -173,7 +173,7 @@ theme.load_treesitter = function()
     ["@keyword.coroutine"] = { link = "Keyword" },                             -- Keywords related to coroutines
     ["@keyword.function"] = { link = "Keyword" },                              -- Keywords that define a function
     ["@keyword.operator"] = { link = "Keyword" },                              -- operators that are English words
-    ["@keyword.import"] = { fg = colors.pink2, italic = true },                -- Keywords for including modules
+    ["@keyword.import"] = { link = "Keyword" },                                -- Keywords for including modules
     ["@keyword.type"] = { link = "Keyword" },                                  -- Keywords defining composite types
     ["@keyword.modifier"] = { link = "Keyword" },                              -- Keywords defining type modifiers
     ["@keyword.repeat"] = { link = "Keyword" },                                -- Keywords related to loops
@@ -245,6 +245,8 @@ theme.load_lsp = function()
     ["@lsp.typemod.typeAlias.library.rust"] = { fg = colors.purple_wisteria },
     ["@lsp.typemod.struct.defaultLibrary.rust"] = { fg = colors.green_blue },
     ["@lsp.type.enumMember.rust"] = { fg = colors.blue_eletric },
+    ["@lsp.type.decorator.rust"] = { fg = colors.brown_lion },
+    ["@lsp.type.builtinType.rust"] = { fg = colors.blue_ylnmn, bold = true },
     --- Default Semantics
     ["@lsp.type.comment"] = {},
     ["@lsp.type.comment.c"] = { link = "@comment" },
