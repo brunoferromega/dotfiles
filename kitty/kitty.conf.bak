@@ -2508,6 +2508,6 @@ tab_powerline_style round
 
 
 # BEGIN_KITTY_THEME
-# Atelier Cave Dark
+# Base2Tone Evening Dark
 include current-theme.conf
 # END_KITTY_THEME

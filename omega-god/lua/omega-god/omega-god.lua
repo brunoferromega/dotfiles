@@ -81,46 +81,46 @@ end
 -- General syntax group highlights (:h group-name)
 theme.load_syntax = function()
   return {
-    Constant = { fg = colors.blue_eletric },            -- (*) Any constant
-    Boolean = { link = "Constant" },                    --   A boolean constant: TRUE, false
-    String = { fg = colors.string_yellow },             --   A string constant: "this is a string"
-    Character = { link = "String" },                    --   A character constant: 'c', '\n'
-    Number = { fg = colors.green1 },                    --   A number constant: 234, 0xff
-    Float = { link = "Number" },                        --   A floating point constant: 2.3e10
+    Constant = { fg = colors.blue_eletric },              -- (*) Any constant
+    Boolean = { link = "Constant" },                      --   A boolean constant: TRUE, false
+    String = { fg = colors.string_yellow },               --   A string constant: "this is a string"
+    Character = { link = "String" },                      --   A character constant: 'c', '\n'
+    Number = { fg = colors.green1 },                      --   A number constant: 234, 0xff
+    Float = { link = "Number" },                          --   A floating point constant: 2.3e10
 
-    Identifier = { fg = colors.white_linen },           -- (*) Any variable name
-    Function = { fg = colors.orange_atomic_tangerine }, --   Function name (also: methods for classes)
+    Identifier = { fg = colors.white_platinum },          -- (*) Any variable name
+    Function = { fg = colors.orange_atomic_tangerine },   --   Function name (also: methods for classes)
 
-    Statement = { fg = colors.white_linen },            -- (*) Any statement
-    Conditional = { fg = colors.red_blush },            --   if, then, else, endif, switch, etc.
-    Repeat = { link = "Conditional" },                  --   for, do, while, etc.
-    Label = { link = "Conditional" },                   --   case, default, etc.
-    Operator = { fg = colors.green_yellow },            --   "sizeof", "+", "*", etc.
-    Keyword = { fg = colors.red_blush, italic = true }, --   any other keyword
-    Exception = { fg = colors.pink1 },                  --   try, catch, throw
+    Statement = { fg = colors.white_platinum },           -- (*) Any statement
+    Conditional = { fg = colors.bittersweet },            --   if, then, else, endif, switch, etc.
+    Repeat = { link = "Conditional" },                    --   for, do, while, etc.
+    Label = { link = "Conditional" },                     --   case, default, etc.
+    Operator = { fg = colors.green_yellow },              --   "sizeof", "+", "*", etc.
+    Keyword = { fg = colors.bittersweet, italic = true }, --   any other keyword
+    Exception = { fg = colors.pink1 },                    --   try, catch, throw
 
-    Macro = { fg = colors.orange_atomic_tangerine },    --   Same as Define
-    Include = { link = "Macro" },                       --   Preprocessor #include
-    Define = { link = "Macro" },                        --   Preprocessor #define
-    PreCondit = { link = "Macro" },                     --   Preprocessor #if, #else, #endif, etc.
-    PreProc = { link = "Macro" },                       -- (*) Generic Preprocessor
+    Macro = { fg = colors.orange_atomic_tangerine },      --   Same as Define
+    Include = { link = "Macro" },                         --   Preprocessor #include
+    Define = { link = "Macro" },                          --   Preprocessor #define
+    PreCondit = { link = "Macro" },                       --   Preprocessor #if, #else, #endif, etc.
+    PreProc = { link = "Macro" },                         -- (*) Generic Preprocessor
 
-    Type = { fg = colors.red_blush },                   -- (*) int, long, char, etc.
-    StorageClass = { link = "Type" },                   --   static, register, volatile, etc.
-    Structure = { link = "Type" },                      --   struct, union, enum, etc.
-    Typedef = { link = "Type" },                        --   A typedef
+    Type = { fg = colors.green1 },                        -- (*) int, long, char, etc.
+    StorageClass = { link = "Type" },                     --   static, register, volatile, etc.
+    Structure = { link = "Type" },                        --   struct, union, enum, etc.
+    Typedef = { link = "Type" },                          --   A typedef
 
-    Special = { fg = colors.blue1 },                    -- (*) Any special symbol
-    SpecialChar = { link = "Special" },                 --   Special character in a constant
-    Tag = { link = "Special" },                         --   You can use CTRL-] on this
-    Delimiter = { link = "Special" },                   --   Character that needs attention
-    SpecialComment = { link = "Special" },              --   Special things inside a comment (e.g. '\n')
-    Debug = { link = "Special" },                       --   Debugging statements
+    Special = { fg = colors.blue1 },                      -- (*) Any special symbol
+    SpecialChar = { link = "Special" },                   --   Special character in a constant
+    Tag = { link = "Special" },                           --   You can use CTRL-] on this
+    Delimiter = { link = "Special" },                     --   Character that needs attention
+    SpecialComment = { link = "Special" },                --   Special things inside a comment (e.g. '\n')
+    Debug = { link = "Special" },                         --   Debugging statements
 
-    Underlined = { underline = true, sp = colors.fg },  -- Text that stands out, HTML links
-    Ignore = { link = "Normal" },                       -- Left blank, hidden |hl-Ignore| (NOTE: May be invisible here in template)
-    Error = { fg = colors.red2 },                       -- Any erroneous construct
-    Todo = { bg = colors.blue1, fg = "None" },          -- Anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+    Underlined = { underline = true, sp = colors.fg },    -- Text that stands out, HTML links
+    Ignore = { link = "Normal" },                         -- Left blank, hidden |hl-Ignore| (NOTE: May be invisible here in template)
+    Error = { fg = colors.red2 },                         -- Any erroneous construct
+    Todo = { bg = colors.blue1, fg = "None" },            -- Anything that needs extra attention; mostly the keywords TODO FIXME and XXX
   }
 end
 
@@ -131,96 +131,96 @@ theme.load_treesitter = function()
     ["@property.go"] = { fg = colors.blue2 },
     ["@constant.go"] = { fg = colors.blue2 },
     -- Defaults
-    ["@variable"] = { fg = colors.white_linen },                                         -- Various variable names
-    ["@variable.builtin"] = { fg = colors.red2 },                                        -- Built-in variable names
-    ["@variable.parameter"] = { fg = colors.white_linen },                               -- Parameters of a function
-    ["@variable.parameter.builtin"] = { fg = colors.lilac2 },                            -- Special parameters (e.g. _, it)
-    ["@variable.member"] = { fg = colors.white_linen },                                  -- Object and struct fields
-    ["@constant"] = { fg = colors.blue_eletric },                                        -- Constant identifiers
-    ["@constant.builtin"] = { fg = colors.blue_eletric },                                -- Built-in constant values
-    ["@constant.macro"] = { fg = colors.orange_atomic_tangerine },                       -- Constants defined by the preprocessor
-    ["@module"] = { fg = colors.yellow_champagne },                                      -- Modules or namespace
-    ["@module.builtin"] = { link = "@module" },                                          -- Built-in modules or namespace
-    ["@label"] = { fg = colors.lilac1 },                                                 -- Label
-    ["@string"] = { link = "String" },                                                   -- String literals
-    ["@string.documentation"] = { fg = colors.green1 },                                  -- String documenting code
-    ["@string.regex"] = { fg = colors.yellow1 },                                         -- Regular expressions
-    ["@slushtring.escape"] = { fg = colors.yellow1 },                                    -- Escape sequences
-    ["@string.special"] = { fg = colors.blue2 },                                         -- Special strings
-    ["@string.special.symbol"] = { fg = colors.blue2 },                                  -- Symbols or atoms
-    ["@string.special.path"] = { fg = colors.blue2 },                                    -- File paths
-    ["@string.special.url"] = { fg = colors.orange2 },                                   -- URLs/hyperlinks
-    ["@character"] = { link = "@string" },                                               -- Character litterals
-    ["@character.special"] = { fg = colors.blue2 },                                      -- Special characters
-    ["@boolean"] = { fg = colors.blue_eletric },                                         -- Boolean literals
-    ["@number"] = { fg = colors.green1 },                                                -- Number literals
-    ["@number.float"] = { fg = colors.green1 },                                          -- Float literals
-    ["@type"] = { fg = colors.purple_mauve },                                            -- Type or class definitions
-    ["@type.builtin"] = { fg = colors.green_blue },                                      -- Built-in types
-    ["@type.definition"] = { fg = colors.purple_wisteria },                              -- Identifiers of type definitions
-    ["@attribute"] = { fg = colors.orange2 },                                            -- Attribute annotations
-    ["@attribute.builtin"] = { fg = colors.purple1 },                                    -- Built-in annotations
-    ["@property"] = { fg = colors.white_linen },                                         -- The 'key' in 'key/value' pairs
-    ["@function"] = { fg = colors.orange_atomic_tangerine },                             -- Function definitions
-    ["@function.builtin"] = { fg = colors.orange_atomic_tangerine, italic = true },      -- Built-in function definitions
+    ["@variable"] = { fg = colors.white },                                     -- Various variable names
+    ["@variable.builtin"] = { fg = colors.red2 },                              -- Built-in variable names
+    ["@variable.parameter"] = { fg = colors.white },                           -- Parameters of a function
+    ["@variable.parameter.builtin"] = { fg = colors.lilac2 },                  -- Special parameters (e.g. _, it)
+    ["@variable.member"] = { fg = colors.white },                              -- Object and struct fields
+    ["@constant"] = { fg = colors.white, bold = true },                        -- Constant identifiers
+    ["@constant.builtin"] = { fg = colors.blue_eletric },                      -- Built-in constant values
+    ["@constant.macro"] = { fg = colors.brown_lion },             -- Constants defined by the preprocessor
+    ["@module"] = { fg = colors.yellow_champagne },                            -- Modules or namespace
+    ["@module.builtin"] = { link = "@module" },                                -- Built-in modules or namespace
+    ["@label"] = { fg = colors.lilac1 },                                       -- Label
+    ["@string"] = { link = "String" },                                         -- String literals
+    ["@string.documentation"] = { fg = colors.green1 },                        -- String documenting code
+    ["@string.regex"] = { fg = colors.yellow1 },                               -- Regular expressions
+    ["@slushtring.escape"] = { fg = colors.yellow1 },                          -- Escape sequences
+    ["@string.special"] = { fg = colors.blue2 },                               -- Special strings
+    ["@string.special.symbol"] = { fg = colors.blue2 },                        -- Symbols or atoms
+    ["@string.special.path"] = { fg = colors.blue2 },                          -- File paths
+    ["@string.special.url"] = { fg = colors.orange2 },                         -- URLs/hyperlinks
+    ["@character"] = { link = "@string" },                                     -- Character litterals
+    ["@character.special"] = { fg = colors.blue2 },                            -- Special characters
+    ["@boolean"] = { fg = colors.blue_eletric },                               -- Boolean literals
+    ["@number"] = { fg = colors.green1 },                                      -- Number literals
+    ["@number.float"] = { fg = colors.green1 },                                -- Float literals
+    ["@type"] = { fg = colors.orange_light },                                  -- Type or class definitions
+    ["@type.builtin"] = { fg = colors.green_blue },                            -- Built-in types
+    ["@type.definition"] = { fg = colors.orange_light },                       -- Identifiers of type definitions
+    ["@attribute"] = { fg = colors.orange2 },                                  -- Attribute annotations
+    ["@attribute.builtin"] = { fg = colors.purple1 },                          -- Built-in annotations
+    ["@property"] = { fg = colors.white_platinum },                            -- The 'key' in 'key/value' pairs
+    ["@function"] = { fg = colors.pink_cherry },                               -- Function definitions
+    ["@function.builtin"] = { fg = colors.pink_cherry, italic = true },        -- Built-in function definitions
     --["@function.call"] = { fg = colors.orange_atomic_tangerine },                        -- Function calls
-    ["@function.macro"] = { link = "@function" },                                        -- Preprocessor macros
-    ["@function.method"] = { fg = colors.orange_atomic_tangerine },                      -- Method definitions
-    ["@function.method.call"] = { fg = colors.orange_atomic_tangerine, italic = false }, -- Method calls
-    ["@constructor"] = { fg = colors.orange_atomic_tangerine, italic = true },           -- Constructor calls and definitions
-    ["@operator"] = { fg = colors.green_yellow },                                        -- Symbolic operators
-    ["@keyword"] = { link = "Keyword" },                                                 -- Keywords not fitting into specific categories
-    ["@keyword.coroutine"] = { link = "Keyword" },                                       -- Keywords related to coroutines
-    ["@keyword.function"] = { link = "Keyword" },                                        -- Keywords that define a function
-    ["@keyword.operator"] = { link = "Keyword" },                                        -- operators that are English words
-    ["@keyword.import"] = { fg = colors.pink2 },                                         -- Keywords for including modules
-    ["@keyword.type"] = { link = "Keyword" },                                            -- Keywords defining composite types
-    ["@keyword.modifier"] = { link = "Keyword" },                                        -- Keywords defining type modifiers
-    ["@keyword.repeat"] = { link = "Keyword" },                                          -- Keywords related to loops
-    ["@keyword.return"] = { link = "Keyword" },                                          -- Keywords like 'return' and 'yield'
-    ["@keyword.debug"] = { fg = colors.purple2 },                                        -- Keywords related to debugging
-    ["@keyword.exception"] = { fg = colors.purple2 },                                    -- Keywords related to exceptions
-    ["@keyword.conditional"] = { link = "Keyword" },                                     -- Keywords related to conditionals
-    ["@keyword.conditional.ternary"] = { fg = colors.lilac1 },                           -- Ternary operators
-    ["@keyword.directive"] = { fg = colors.purple1 },                                    -- Various preprocessor directives and shebangs
-    ["@keyword.directive.define"] = { fg = colors.purple1 },                             -- Preprocessor definition directives
-    ["@punctuation.delimiter"] = { fg = colors.fg },                                     -- Delimiters
-    ["@punctuation.bracket"] = { fg = colors.fg },                                       -- Brackets
-    ["@punctuation.special"] = { fg = colors.green_yellow },                             -- Special Symbols
-    ["@comment"] = { fg = colors.grey2 },                                                -- Line & block comments
-    ["@comment.documentation"] = { fg = colors.grey2 },                                  -- Comments documenting code
-    ["@comment.error"] = { bg = "#a3336f", fg = "None" },                                -- Error-type comments
-    ["@comment.warning"] = { bg = colors.ice1, fg = "None" },                            -- Warning-type comments
-    ["@comment.todo"] = { bg = colors.blue1, fg = "None" },                              -- Todo-type comments
-    ["@comment.note"] = { bg = colors.green2, fg = "None" },                             -- Note-type comments
-    ["@markup.strong"] = { fg = colors.pink1 },                                          -- Bold text
-    ["@markup.italic"] = { fg = colors.fg, italic = true },                              -- Italic text
-    ["@markup.strikethrough"] = { fg = colors.fg, strikethrough = true },                -- Struck-through text
-    ["@markup.underline"] = { fg = colors.fg, underline = true },                        -- Underlined text
-    ["@markup.heading"] = { fg = colors.blue1 },                                         -- Heading & titles
-    ["@markup.heading.1"] = { fg = "#87bff7" },                                          -- Top-level heading
-    ["@markup.heading.2"] = { fg = "#8bc2f8" },                                          -- Section heading
-    ["@markup.heading.3"] = { fg = "#95c7f9" },                                          -- Subsection heading
-    ["@markup.heading.4"] = { fg = "#99c9fa" },                                          -- And so on
-    ["@markup.heading.5"] = { fg = "#a2cffb" },                                          -- And so forth
-    ["@markup.heading.6"] = { fg = "#acd4fc" },                                          -- Six levels is enough
-    ["@markup.quote"] = { fg = colors.fg },                                              -- Block quotes
-    ["@markup.math"] = { fg = colors.blue2 },                                            -- Math environments
-    ["@markup.link"] = { fg = colors.purple2 },                                          -- Text references footnotes, citations
-    ["@markup.link.label"] = { fg = colors.lilac1 },                                     -- Link, reference descriptions
-    ["@markup.link.url"] = { fg = colors.orange2, underline = true },                    -- URL-style links
-    ["@markup.raw"] = { fg = colors.green2 },                                            -- Literal or verbatim text
-    ["@markup.raw.block"] = { fg = colors.pink1 },                                       -- Literal or verbatim text as a stand-alone block
-    ["@markup.list"] = { fg = colors.ice1 },                                             -- List markers
-    ["@markup.list.checked"] = { fg = colors.green1 },                                   -- Checked todo-style list markers
-    ["@markup.list.unchecked"] = { fg = colors.ice2 },                                   -- Unchecked todo-style list markers
-    ["@diff.plus"] = { fg = colors.green1 },                                             -- Added text (for diff files)
-    ["@diff.minus."] = { fg = colors.red2 },                                             -- Deleted text (for diff files)
-    ["@diff.delta"] = { fg = colors.ice1 },                                              -- Changed text (for diff files)
-    ["@tag"] = { fg = colors.purple1 },                                                  -- XML-style tag names (e.g. in XML, HTML, etc.)
-    ["@tag.builtin"] = { fg = colors.blue1 },                                            -- XML-style tag names (e.g. HTML5 tags)
-    ["@tag.attribute"] = { fg = colors.lilac2 },                                         -- XML-style tag attributes
-    ["@tag.delimiter"] = { fg = colors.ice2 },                                           -- XML-style tag delimiters
+    ["@function.macro"] = { fg = colors.brown_lion },                              -- Preprocessor macros
+    ["@function.method"] = { fg = colors.pink_cherry },                        -- Method definitions
+    ["@function.method.call"] = { fg = colors.pink_cherry, italic = false },   -- Method calls
+    ["@constructor"] = { fg = colors.orange_atomic_tangerine, italic = true }, -- Constructor calls and definitions
+    ["@operator"] = { fg = colors.green_yellow },                              -- Symbolic operators
+    ["@keyword"] = { link = "Keyword" },                                       -- Keywords not fitting into specific categories
+    ["@keyword.coroutine"] = { link = "Keyword" },                             -- Keywords related to coroutines
+    ["@keyword.function"] = { link = "Keyword" },                              -- Keywords that define a function
+    ["@keyword.operator"] = { link = "Keyword" },                              -- operators that are English words
+    ["@keyword.import"] = { fg = colors.pink2, italic = true },                -- Keywords for including modules
+    ["@keyword.type"] = { link = "Keyword" },                                  -- Keywords defining composite types
+    ["@keyword.modifier"] = { link = "Keyword" },                              -- Keywords defining type modifiers
+    ["@keyword.repeat"] = { link = "Keyword" },                                -- Keywords related to loops
+    ["@keyword.return"] = { link = "Keyword" },                                -- Keywords like 'return' and 'yield'
+    ["@keyword.debug"] = { fg = colors.purple2 },                              -- Keywords related to debugging
+    ["@keyword.exception"] = { fg = colors.purple2 },                          -- Keywords related to exceptions
+    ["@keyword.conditional"] = { link = "Keyword" },                           -- Keywords related to conditionals
+    ["@keyword.conditional.ternary"] = { fg = colors.lilac1 },                 -- Ternary operators
+    ["@keyword.directive"] = { fg = colors.purple1 },                          -- Various preprocessor directives and shebangs
+    ["@keyword.directive.define"] = { fg = colors.purple1 },                   -- Preprocessor definition directives
+    ["@punctuation.delimiter"] = { fg = colors.fg },                           -- Delimiters
+    ["@punctuation.bracket"] = { fg = colors.fg },                             -- Brackets
+    ["@punctuation.special"] = { fg = colors.green_yellow },                   -- Special Symbols
+    ["@comment"] = { fg = colors.grey2 },                                      -- Line & block comments
+    ["@comment.documentation"] = { fg = colors.grey2 },                        -- Comments documenting code
+    ["@comment.error"] = { bg = "#a3336f", fg = "None" },                      -- Error-type comments
+    ["@comment.warning"] = { bg = colors.ice1, fg = "None" },                  -- Warning-type comments
+    ["@comment.todo"] = { bg = colors.blue1, fg = "None" },                    -- Todo-type comments
+    ["@comment.note"] = { bg = colors.green2, fg = "None" },                   -- Note-type comments
+    ["@markup.strong"] = { fg = colors.pink1 },                                -- Bold text
+    ["@markup.italic"] = { fg = colors.fg, italic = true },                    -- Italic text
+    ["@markup.strikethrough"] = { fg = colors.fg, strikethrough = true },      -- Struck-through text
+    ["@markup.underline"] = { fg = colors.fg, underline = true },              -- Underlined text
+    ["@markup.heading"] = { fg = colors.blue1 },                               -- Heading & titles
+    ["@markup.heading.1"] = { fg = "#87bff7" },                                -- Top-level heading
+    ["@markup.heading.2"] = { fg = "#8bc2f8" },                                -- Section heading
+    ["@markup.heading.3"] = { fg = "#95c7f9" },                                -- Subsection heading
+    ["@markup.heading.4"] = { fg = "#99c9fa" },                                -- And so on
+    ["@markup.heading.5"] = { fg = "#a2cffb" },                                -- And so forth
+    ["@markup.heading.6"] = { fg = "#acd4fc" },                                -- Six levels is enough
+    ["@markup.quote"] = { fg = colors.fg },                                    -- Block quotes
+    ["@markup.math"] = { fg = colors.blue2 },                                  -- Math environments
+    ["@markup.link"] = { fg = colors.purple2 },                                -- Text references footnotes, citations
+    ["@markup.link.label"] = { fg = colors.lilac1 },                           -- Link, reference descriptions
+    ["@markup.link.url"] = { fg = colors.orange2, underline = true },          -- URL-style links
+    ["@markup.raw"] = { fg = colors.green2 },                                  -- Literal or verbatim text
+    ["@markup.raw.block"] = { fg = colors.pink1 },                             -- Literal or verbatim text as a stand-alone block
+    ["@markup.list"] = { fg = colors.ice1 },                                   -- List markers
+    ["@markup.list.checked"] = { fg = colors.green1 },                         -- Checked todo-style list markers
+    ["@markup.list.unchecked"] = { fg = colors.ice2 },                         -- Unchecked todo-style list markers
+    ["@diff.plus"] = { fg = colors.green1 },                                   -- Added text (for diff files)
+    ["@diff.minus."] = { fg = colors.red2 },                                   -- Deleted text (for diff files)
+    ["@diff.delta"] = { fg = colors.ice1 },                                    -- Changed text (for diff files)
+    ["@tag"] = { fg = colors.purple1 },                                        -- XML-style tag names (e.g. in XML, HTML, etc.)
+    ["@tag.builtin"] = { fg = colors.blue1 },                                  -- XML-style tag names (e.g. HTML5 tags)
+    ["@tag.attribute"] = { fg = colors.lilac2 },                               -- XML-style tag attributes
+    ["@tag.delimiter"] = { fg = colors.ice2 },                                 -- XML-style tag delimiters
   }
 end
 
@@ -236,11 +236,15 @@ theme.load_lsp = function()
     LspSignatureActiveParameter = { bg = "None", fg = "None" }, -- Used to highlight the active parameter in the signature help. See |vim.lsp.handlers.signature_help()|.
 
     --- Language Semantics
+    -- Java
     ["@lsp.type.type.java"] = { link = "Keyword" },
     ["@lsp.type.modifier.java"] = { link = "Keyword" },
-    ["@lsp.typemod.interface.defaultLibrary.rust"] = { fg = colors.purple_wisteria },
+    -- Rust
+    ["@lsp.type.interface.rust"] = { fg = colors.purple_wisteria },
+    ["@lsp.typemod.interface.defaultLibrary.rust"] = { fg = colors.purple_wisteria, italic = true },
     ["@lsp.typemod.typeAlias.library.rust"] = { fg = colors.purple_wisteria },
     ["@lsp.typemod.struct.defaultLibrary.rust"] = { fg = colors.green_blue },
+    ["@lsp.type.enumMember.rust"] = { fg = colors.blue_eletric },
     --- Default Semantics
     ["@lsp.type.comment"] = {},
     ["@lsp.type.comment.c"] = { link = "@comment" },
@@ -252,7 +256,7 @@ theme.load_lsp = function()
     ["@lsp.type.namespace.python"] = { link = "@variable" },
     ["@lsp.type.parameter"] = { link = "@parameter" },
     ["@lsp.type.property"] = { link = "@property" },
-    ["@lsp.type.variable"] = {}, -- defer to treesitter for regular variables
+    ["@lsp.type.variable"] = { link = "@variable" }, -- defer to treesitter for regular variables
     ["@lsp.type.variable.svelte"] = { link = "@variable" },
     ["@lsp.typemod.function.defaultLibrary"] = { link = "@function.builtin" },
     ["@lsp.typemod.operator.injected"] = { link = "@operator" },

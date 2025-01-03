@@ -1,4 +1,27 @@
 local colors = {
+  -- Neo Theme
+  red_blush = "#DA627D",
+  bittersweet = "#E56154",
+  pink_mini = "#FCD3DE",
+  pink_cherry = "#EFA9AE",
+
+  yellow_champagne = "#EFD9CE",
+
+  orange_light = "#FFD6AF",
+  orange_atomic_tangerine = "#FCA17D",
+
+  brown_liver = "#6B4B3E",
+  brown_lion = "#C49E85",
+
+  white_platinum = "#E7E5E1",
+  white_timberwolf = "#D0CFC8",
+  white_linen = "#FDF5EC",
+  white_antiflash = "#EEEEEE",
+  white = "#FEFEFE",
+
+  purple_wisteria = "#B79CED",
+  purple_mauve = "#DEC0F1",
+
   -- Older Theme
   blue_eletric = "#45dcf3",
   string_yellow = "#F2E2BA",
@@ -6,14 +29,6 @@ local colors = {
   indigo = "#7D83FF",
   green_yellow = "#AFFC41",
   green_blue = "#76B9AC",
-
-  -- Neo Theme
-  red_blush = "#DA627D",
-  yellow_champagne = "#EFD9CE",
-  orange_atomic_tangerine = "#FCA17D",
-  white_linen = "#FDF5EC",
-  purple_wisteria = "#B79CED",
-  purple_mauve = "#DEC0F1",
 
   -- Base Theme
   bg1 = "#264027", -- "#12121f",
