@@ -19,7 +19,6 @@ return {
         "gopls",
         "ts_ls",
         "pylsp",
-        "jdtls",
         "lemminx",
       },
       automatic_installation = false,
@@ -56,7 +55,10 @@ return {
 
     lspconfig.rust_analyzer.setup({
       on_attach = function(client, bufrn)
-        -- remove completions
+        --- Remove Semantic Highlighting
+        -- client.server_capabilities.semanticTokensProvider = nil
+
+        --- Remove Completions
         client.server_capabilities.completionProvider = false
         disable_diagnostics(client, bufrn)
       end,
@@ -77,23 +79,11 @@ return {
       capabilities = capabilities,
     })
 
-
     lspconfig.pylsp.setup({
       capabilities = capabilities,
     })
 
     lspconfig.ts_ls.setup({
-      capabilities = capabilities,
-    })
-
-    lspconfig.jdtls.setup({
-      formatOptions = {
-        tabSize = 4,
-      },
-      on_attach = function(client, _)
-        -- remove semantic highlighting
-        client.server_capabilities.semanticTokensProvider = nil
-      end,
       capabilities = capabilities,
     })
 
