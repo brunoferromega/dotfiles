@@ -128,8 +128,8 @@ end
 theme.load_treesitter = function()
   return {
     -- For specific languages
-    ["@property.go"] = { fg = colors.blue2 },
-    ["@constant.go"] = { fg = colors.blue2 },
+    ["@property.go"] = { fg = colors.rose_tale },
+    ["@constant.go"] = { fg = colors.white, bold = true },
     -- Defaults
     ["@variable"] = { fg = colors.white },                                     -- Various variable names
     ["@variable.builtin"] = { fg = colors.red2 },                              -- Built-in variable names
