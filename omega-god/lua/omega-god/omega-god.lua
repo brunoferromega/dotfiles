@@ -137,7 +137,7 @@ theme.load_treesitter = function()
     ["@variable.parameter.builtin"] = { fg = colors.lilac2 },                  -- Special parameters (e.g. _, it)
     ["@variable.member"] = { fg = colors.white },                              -- Object and struct fields
     ["@constant"] = { fg = colors.white, bold = true },                        -- Constant identifiers
-    ["@constant.builtin"] = { fg = colors.blue_eletric },                      -- Built-in constant values
+    ["@constant.builtin"] = { fg = colors.rose_tale, bold = true },            -- Built-in constant values
     ["@constant.macro"] = { fg = colors.brown_lion },                          -- Constants defined by the preprocessor
     ["@module"] = { fg = colors.yellow_champagne },                            -- Modules or namespace
     ["@module.builtin"] = { link = "@module" },                                -- Built-in modules or namespace
@@ -155,9 +155,9 @@ theme.load_treesitter = function()
     ["@boolean"] = { fg = colors.blue_eletric },                               -- Boolean literals
     ["@number"] = { fg = colors.green1 },                                      -- Number literals
     ["@number.float"] = { fg = colors.green1 },                                -- Float literals
-    ["@type"] = { fg = colors.orange_light },                                  -- Type or class definitions
+    ["@type"] = { fg = colors.purple_lilac },                                  -- Type or class definitions
     ["@type.builtin"] = { fg = colors.blue_ylnmn, bold = true },               -- Built-in types
-    ["@type.definition"] = { fg = colors.orange_light },                       -- Identifiers of type definitions
+    ["@type.definition"] = { fg = colors.purple_lilac },                       -- Identifiers of type definitions
     ["@attribute"] = { fg = colors.orange2 },                                  -- Attribute annotations
     ["@attribute.builtin"] = { fg = colors.purple1 },                          -- Built-in annotations
     ["@property"] = { fg = colors.white },                                     -- The 'key' in 'key/value' pairs
@@ -240,11 +240,11 @@ theme.load_lsp = function()
     ["@lsp.type.type.java"] = { link = "Keyword" },
     ["@lsp.type.modifier.java"] = { link = "Keyword" },
     -- Rust
-    ["@lsp.type.interface.rust"] = { fg = colors.purple_wisteria },
-    ["@lsp.typemod.interface.defaultLibrary.rust"] = { fg = colors.purple_wisteria, italic = true },
-    ["@lsp.typemod.typeAlias.library.rust"] = { fg = colors.purple_wisteria },
-    ["@lsp.typemod.struct.defaultLibrary.rust"] = { fg = colors.green_blue },
-    ["@lsp.type.enumMember.rust"] = { fg = colors.blue_eletric },
+    ["@lsp.type.interface.rust"] = { fg = colors.purple_lilac },
+    ["@lsp.typemod.interface.defaultLibrary.rust"] = { fg = colors.purple_lilac, italic = true },
+    ["@lsp.typemod.typeAlias.library.rust"] = { fg = colors.purple_lilac, italic = true },
+    ["@lsp.typemod.struct.defaultLibrary.rust"] = { fg = colors.blue_ylnmn },
+    ["@lsp.type.enumMember.rust"] = { fg = colors.rose_tale, bold = true },
     ["@lsp.type.decorator.rust"] = { fg = colors.brown_lion },
     ["@lsp.type.builtinType.rust"] = { fg = colors.blue_ylnmn, bold = true },
     --- Default Semantics

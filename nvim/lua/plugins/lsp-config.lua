@@ -6,6 +6,7 @@ return {
     { "WhoIsSethDaniel/mason-tool-installer.nvim" },
     { "j-hui/fidget.nvim" },
     { "folke/lazydev.nvim" },
+    { "Hoffs/omnisharp-extended-lsp.nvim" },
   },
   config = function()
     require("mason").setup()
@@ -20,6 +21,8 @@ return {
         "ts_ls",
         "pylsp",
         "lemminx",
+        "csharp_ls",
+        "omnisharp",
       },
       automatic_installation = false,
     })
@@ -90,5 +93,16 @@ return {
     lspconfig.lemminx.setup({
       capabilities = capabilities,
     })
+
+    local config = {
+      handlers = {
+        ["textDocument/definition"] = require('omnisharp_extended').definition_handler,
+        ["textDocument/typeDefinition"] = require('omnisharp_extended').type_definition_handler,
+        ["textDocument/references"] = require('omnisharp_extended').references_handler,
+        ["textDocument/implementation"] = require('omnisharp_extended').implementation_handler,
+      },
+      capabilities = capabilities,
+    }
+    lspconfig.omnisharp.setup(config)
   end,
 }

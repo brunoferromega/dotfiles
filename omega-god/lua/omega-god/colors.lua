@@ -21,8 +21,13 @@ local colors = {
 
   purple_wisteria = "#B79CED",
   purple_mauve = "#DEC0F1",
+  purple_indigo = "#AA9BF7",
+  purple_lilac = "#BE97C6",
+
+  rose_tale = "#EFBCD5",
 
   blue_ylnmn = "#4A5590",
+  blue_azure = "#3F84E5",
 
   -- Older Theme
   blue_eletric = "#45dcf3",
