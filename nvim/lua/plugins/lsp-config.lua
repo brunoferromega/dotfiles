@@ -16,6 +16,7 @@ return {
         "lua_ls",
         "vimls",
         "rust_analyzer",
+        "taplo", -- TOML file formatter
         "clangd",
         "gopls",
         "ts_ls",
@@ -66,6 +67,10 @@ return {
         disable_diagnostics(client, bufrn)
       end,
       capabibilites = disable_snippets(capabilities),
+    })
+
+    lspconfig.taplo.setup({
+      capabilities = capabilities,
     })
 
     lspconfig.gopls.setup({
