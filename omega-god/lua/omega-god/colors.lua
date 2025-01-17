@@ -25,6 +25,8 @@ local colors = {
   purple_lilac = "#BE97C6",
 
   rose_tale = "#EFBCD5",
+  rose_quartx = "#B39BB9",
+  margenta_haze = "#904C77",
 
   blue_ylnmn = "#4A5590",
   blue_azure = "#3F84E5",

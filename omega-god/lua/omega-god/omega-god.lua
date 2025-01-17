@@ -204,6 +204,13 @@ theme.load_treesitter = function()
     ["@markup.heading.4"] = { fg = "#99c9fa" },                                -- And so on
     ["@markup.heading.5"] = { fg = "#a2cffb" },                                -- And so forth
     ["@markup.heading.6"] = { fg = "#acd4fc" },                                -- Six levels is enough
+    ["@markup.heading.html"] = { link = "@spell" },
+    ["@markup.heading.1.tsx"] = { link = "@spell" },                           -- Top-level heading
+    ["@markup.heading.2.tsx"] = { link = "@spell" },                           -- Section heading
+    ["@markup.heading.3.tsx"] = { link = "@spell" },                           -- Subsection heading
+    ["@markup.heading.4.tsx"] = { link = "@spell" },                           -- And so on
+    ["@markup.heading.5.tsx"] = { link = "@spell" },                           -- And so forth
+    ["@markup.heading.6.tsx"] = { link = "@spell" },                           -- Six levels is enough
     ["@markup.quote"] = { fg = colors.fg },                                    -- Block quotes
     ["@markup.math"] = { fg = colors.blue2 },                                  -- Math environments
     ["@markup.link"] = { fg = colors.purple2 },                                -- Text references footnotes, citations
@@ -218,9 +225,10 @@ theme.load_treesitter = function()
     ["@diff.minus."] = { fg = colors.red2 },                                   -- Deleted text (for diff files)
     ["@diff.delta"] = { fg = colors.ice1 },                                    -- Changed text (for diff files)
     ["@tag"] = { fg = colors.purple1 },                                        -- XML-style tag names (e.g. in XML, HTML, etc.)
-    ["@tag.builtin"] = { fg = colors.blue1 },                                  -- XML-style tag names (e.g. HTML5 tags)
-    ["@tag.attribute"] = { fg = colors.lilac2 },                               -- XML-style tag attributes
+    ["@tag.builtin"] = { fg = colors.orange_atomic_tangerine },                -- XML-style tag names (e.g. HTML5 tags)
+    ["@tag.attribute"] = { fg = colors.margenta_haze },                        -- XML-style tag attributes
     ["@tag.delimiter"] = { fg = colors.ice2 },                                 -- XML-style tag delimiters
+    ["@tag.html"] = { fg = colors.orange_atomic_tangerine },
   }
 end
 
