@@ -1130,7 +1130,7 @@ tab_powerline_style round
 #: }}}
 
 #: Color scheme {{{
-include ./Base2Tone Evening Dark.conf
+include ./graphite.conf
 
 # foreground #dddddd
 # background #ffffff
@@ -2507,7 +2507,3 @@ include ./Base2Tone Evening Dark.conf
 #: }}}
 
 
-# BEGIN_KITTY_THEME
-# Base2Tone Porch Dark
-include current-theme.conf
-# END_KITTY_THEME
