@@ -248,6 +248,8 @@ theme.load_lsp = function()
     ["@lsp.type.type.java"] = { link = "Keyword" },
     ["@lsp.type.modifier.java"] = { link = "Keyword" },
     -- Rust
+    ["@lsp.typemod.variable.callable.rust"] = { link = "@function" },
+    ["@lsp.typemod.variable.declaration.rust"] = { link = "@variable" },
     ["@lsp.type.interface.rust"] = { fg = colors.purple_lilac },
     ["@lsp.typemod.interface.defaultLibrary.rust"] = { fg = colors.purple_lilac, italic = true },
     ["@lsp.typemod.typeAlias.library.rust"] = { fg = colors.purple_lilac, italic = true },
