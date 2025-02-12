@@ -20,6 +20,7 @@ return {
         "clangd",
         "gopls",
         "ts_ls",
+        "jdtls",
         "pylsp",
         "lemminx",
         "csharp_ls",
@@ -80,6 +81,10 @@ return {
         disable_diagnostics(client, bufrn)
       end,
       capabilities = capabilities,
+    })
+
+    lspconfig.jdtls.setup({
+      capabilitis = capabilities,
     })
 
     lspconfig.clangd.setup({
