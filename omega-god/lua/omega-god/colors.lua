@@ -17,7 +17,7 @@ local colors = {
   white_timberwolf = "#D0CFC8",
   white_linen = "#FDF5EC",
   white_antiflash = "#EEEEEE",
-  white = "#FEFEFE",
+  white_smoke = "#F2F0F0",
 
   purple_wisteria = "#B79CED",
   purple_mauve = "#DEC0F1",

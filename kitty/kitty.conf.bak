@@ -2510,6 +2510,6 @@ include ./graphite.conf
 
 
 # BEGIN_KITTY_THEME
-# graphite
+# Urple
 include current-theme.conf
 # END_KITTY_THEME

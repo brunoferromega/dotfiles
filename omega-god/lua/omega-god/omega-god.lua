@@ -88,10 +88,10 @@ theme.load_syntax = function()
     Number = { fg = colors.green1 },                      --   A number constant: 234, 0xff
     Float = { link = "Number" },                          --   A floating point constant: 2.3e10
 
-    Identifier = { fg = colors.white },                   -- (*) Any variable name
+    Identifier = { fg = colors.white_smoke },             -- (*) Any variable name
     Function = { fg = colors.orange_atomic_tangerine },   --   Function name (also: methods for classes)
 
-    Statement = { fg = colors.white },                    -- (*) Any statement
+    Statement = { fg = colors.white_smoke },              -- (*) Any statement
     Conditional = { fg = colors.bittersweet },            --   if, then, else, endif, switch, etc.
     Repeat = { link = "Conditional" },                    --   for, do, while, etc.
     Label = { link = "Conditional" },                     --   case, default, etc.
@@ -129,14 +129,14 @@ theme.load_treesitter = function()
   return {
     -- For specific languages
     ["@property.go"] = { fg = colors.rose_tale },
-    ["@constant.go"] = { fg = colors.white, bold = true },
+    ["@constant.go"] = { fg = colors.white_smoke, bold = true },
     -- Defaults
-    ["@variable"] = { fg = colors.white },                                     -- Various variable names
+    ["@variable"] = { fg = colors.white_smoke },                               -- Various variable names
     ["@variable.builtin"] = { fg = colors.red2 },                              -- Built-in variable names
-    ["@variable.parameter"] = { fg = colors.white },                           -- Parameters of a function
+    ["@variable.parameter"] = { fg = colors.white_smoke },                     -- Parameters of a function
     ["@variable.parameter.builtin"] = { fg = colors.lilac2 },                  -- Special parameters (e.g. _, it)
-    ["@variable.member"] = { fg = colors.white },                              -- Object and struct fields
-    ["@constant"] = { fg = colors.white, bold = true },                        -- Constant identifiers
+    ["@variable.member"] = { fg = colors.white_smoke },                        -- Object and struct fields
+    ["@constant"] = { fg = colors.white_smoke, bold = true },                  -- Constant identifiers
     ["@constant.builtin"] = { fg = colors.rose_tale, bold = true },            -- Built-in constant values
     ["@constant.macro"] = { fg = colors.brown_lion },                          -- Constants defined by the preprocessor
     ["@module"] = { fg = colors.yellow_champagne },                            -- Modules or namespace
@@ -160,7 +160,7 @@ theme.load_treesitter = function()
     ["@type.definition"] = { fg = colors.purple_lilac },                       -- Identifiers of type definitions
     ["@attribute"] = { fg = colors.orange2 },                                  -- Attribute annotations
     ["@attribute.builtin"] = { fg = colors.purple1 },                          -- Built-in annotations
-    ["@property"] = { fg = colors.white },                                     -- The 'key' in 'key/value' pairs
+    ["@property"] = { fg = colors.white_smoke },                               -- The 'key' in 'key/value' pairs
     ["@function"] = { fg = colors.pink_cherry },                               -- Function definitions
     ["@function.builtin"] = { fg = colors.pink_cherry, italic = true },        -- Built-in function definitions
     --["@function.call"] = { fg = colors.orange_atomic_tangerine },                        -- Function calls
