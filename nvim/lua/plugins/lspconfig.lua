@@ -58,13 +58,15 @@ return {
     })
 
     lspconfig.rust_analyzer.setup({
-      on_attach = function(client, bufrn)
+      on_attach = function(client, _)
         --- Remove Semantic Highlighting
         -- client.server_capabilities.semanticTokensProvider = nil
 
         --- Remove Completions
         client.server_capabilities.completionProvider = false
-        disable_diagnostics(client, bufrn)
+
+        --- Remove Diagnostics
+        -- disable_diagnostics(client, bufrn)
       end,
       capabibilites = disable_snippets(capabilities),
     })
