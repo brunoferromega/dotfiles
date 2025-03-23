@@ -84,6 +84,9 @@ return {
     })
 
     lspconfig.jdtls.setup({
+      on_attach = function(client, _)
+        -- client.server_capabilities.completionProvider = false
+      end,
       capabilitis = capabilities,
     })
 
