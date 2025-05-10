@@ -101,7 +101,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-. "$HOME/.asdf/asdf.sh" 
+
+# ASDF Configuration
+export PATH="$HOME/bin:$PATH"
+
+export ASDF_DATA_DIR="$HOME/.asdf" 
+export PATH="$ASDF_DATA_DIR/shims:$PATH"
+
 
 export KERL_BUILD_DOCS=yes
 
@@ -144,4 +150,4 @@ export GO111MODULE=on
 # Load Angular CLI autocompletion.
 source <(ng completion script)
 
-PATH=~/.console-ninja/.bin:$PATH
+
